@@ -4,7 +4,9 @@ libraries{
     credentialsId = "subir_infygit_cred"
   }
   maven
-  sonarqube
+  sonarqube {
+    buildTool = "maven"
+  }
   jfrog {
     credentialId = "artifactory_API_key"
     releaseRepo = "devopscoe-maven-virtual"
