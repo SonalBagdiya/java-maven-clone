@@ -10,8 +10,6 @@ libraries{
     sonarToken = "sonar_token"
   }
   jfrog {
-    credentialId = "artifactory_API_key"
-    releaseRepo = "devopscoe-maven-virtual"
-    snapshotRepo = "devopscoe-maven-virtual"
+    credentialId = "settings_xml"
   }
 }
