@@ -5,7 +5,7 @@ libraries{
   }
   maven
   sonarqube {
-    buildTool = "maven"
+    sonarToken = "sonar_token"
   }
   jfrog {
     credentialId = "artifactory_API_key"
