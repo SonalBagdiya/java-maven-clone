@@ -3,7 +3,9 @@ libraries{
     url =  "https://infygithub.ad.infosys.com/DevOpsCoeOrg/java-maven.git"
     credentialsId = "subir_infygit_cred"
   }
-  maven
+  maven {
+    settingsXmlCred = "settings_xml"
+  }
   sonarqube {
     sonarToken = "sonar_token"
   }
