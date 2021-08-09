@@ -12,4 +12,8 @@ libraries{
   jfrog {
     credentialId = "settings_xml"
   }
+  docker {
+    registry_host = "infyartifactory.ad.infosys.com"
+    registry_cred = "infyartifactory_cred"
+  }
 }
