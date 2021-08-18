@@ -1,3 +1,7 @@
+jte {
+  pipeline_template = "Jenkinsfile-maven"
+}
+
 libraries{
   git {
     url =  "https://infygithub.ad.infosys.com/DevOpsCoeOrg/java-maven.git"
