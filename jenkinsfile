@@ -1,0 +1,38 @@
+@Library('jenkins-global-shared-library') _
+
+pipeline {
+    agent none
+
+    stages {
+        stage('Read Properties') {
+            agent any
+
+            steps {
+                script {
+                    properties = readYaml file: "properties.yaml"
+                }
+            }
+        }
+
+        stage('Compile Application') {
+            agent {
+                kubernetes {
+                    yamlFile "${properties.JAVA_MAVEN_SLAVE_YAML}"
+                }
+            }
+
+            steps {
+                container('jnlp') {
+                    script {
+                        configFileProvider([configFile(fileId: 'custom-maven-settings', variable: 'MAVEN_SETTINGS_XML')]) {
+                            executeMavenGoal("${MAVEN_SETTINGS_XML}", 'compile')
+                        }
+                    }
+                }
+            }    
+        }
+      
+      
+        }
+    }
+}
