@@ -1,0 +1,22 @@
+kind: Pod
+metadata:
+  name: java-maven
+spec:
+  containers:
+    - name: jnlp
+      image: infyartifactory.ad.infosys.com/devopscoe-docker/ose-jenkins-agent-maven:v4.5.0
+      imagePullPolicy: IfNotPresent
+      # command:
+      #   - sleep
+      args:
+        - "${computer.jnlpmac}"
+        - "${computer.name}"
+      resources:
+        limits:
+          cpu: 300m
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 512Mi   
+  imagePullSecrets:
+    - name: cloud-agnostic-platform              
